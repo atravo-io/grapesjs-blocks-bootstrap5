@@ -1,16 +1,8 @@
-# GrapesJS Bootstrap v4 Blocks Plugin
-
-[![npm](https://img.shields.io/npm/v/grapesjs-blocks-bootstrap4.svg)](https://www.npmjs.com/package/grapesjs-blocks-bootstrap4)
-
-<!--<span><a href="https://david-dm.org/z1lk/grapesjs-plugin-boilerplate#info=devDependencies" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/artf/grapesjs-plugin-boilerplate.svg" alt="Dev Dependency Status" /></a></span>-->
-
-<!--<a rel="nofollow" href="https://app.codesponsor.io/link/nb9nPYf2XqCE1PbgcQj6gf4D/artf/grapesjs-plugin-boilerplate">
-  <img alt="Sponsor" width="888" height="68" src="https://app.codesponsor.io/embed/nb9nPYf2XqCE1PbgcQj6gf4D/artf/grapesjs-plugin-boilerplate.svg"/>
-</a>-->
+# GrapesJS Bootstrap v5 Blocks Plugin
 
 ## Summary
 
-* Plugin name: `grapesjs-blocks-bootstrap4`
+* Plugin name: `grapesjs-blocks-bootstrap5`
 * Components (see Options for list of Blocks)
   * Layout
     * `container`
@@ -140,11 +132,11 @@ etc.
 ## Download
 
 <!--* CDN
-  * `https://unpkg.com/grapesjs-blocks-bootstrap4` -->
+  * `https://unpkg.com/grapesjs-blocks-bootstrap5` -->
 * NPM
-  * `npm i grapesjs-blocks-bootstrap4`
+  * `npm i grapesjs-blocks-bootstrap5`
 * GIT
-  * `git clone https://github.com/kaoz70/grapesjs-blocks-bootstrap4.git`
+  * `git clone https://github.com/atravo-io/grapesjs-blocks-bootstrap5.git`
 
 
 
@@ -155,7 +147,7 @@ etc.
 ```html
 <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/grapesjs"></script>
-<script src="path/to/grapesjs-blocks-bootstrap4.min.js"></script>
+<script src="path/to/grapesjs-blocks-bootstrap5.min.js"></script>
 
 <div id="gjs"></div>
 
@@ -163,9 +155,9 @@ etc.
   var editor = grapesjs.init({
       container : '#gjs',
       ...
-      plugins: ['grapesjs-blocks-bootstrap4'],
+      plugins: ['grapesjs-blocks-bootstrap5'],
       pluginsOpts: {
-        'grapesjs-blocks-bootstrap4': {
+        'grapesjs-blocks-bootstrap5': {
           blocks: {
             // ...
           },
@@ -201,26 +193,21 @@ etc.
 Clone the repository
 
 ```sh
-$ git clone https://github.com/kaoz70/grapesjs-blocks-bootstrap4.git
-$ cd grapesjs-blocks-bootstrap4
+$ git clone https://github.com/atravo-io/grapesjs-blocks-bootstrap5.git
+$ cd grapesjs-blocks-bootstrap5
 ```
 
 Install dependencies
 
 ```sh
-$ npm i
+$ yarn install
 ```
 
-The plugin relies on GrapesJS via `peerDependencies` so you have to install it manually (without adding it to package.json)
-
-```sh
-$ npm i grapesjs --no-save
-```
 
 Start the dev server
 
 ```sh
-$ npm start
+$ yarn start
 ```
 
 
