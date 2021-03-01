@@ -11,7 +11,6 @@ export default (dc, config = {}) => {
 
   dc.addType(type, {
 
-
     model: defaultModel.extend({
       defaults: {
         ...defaultModel.prototype.defaults,
@@ -24,7 +23,7 @@ export default (dc, config = {}) => {
 
       init() {
         this.get('classes').pluck('name').indexOf(classId) < 0 && this.addClass(classId);
-      }
+      },
     }, {
       isComponent(el) {
         if (elHasClass(el, classId)) return { type };
@@ -44,4 +43,4 @@ export default (dc, config = {}) => {
       },
     }),
   });
-}
+};

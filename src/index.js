@@ -4,7 +4,7 @@ import loadTraits from './traits';
 import loadComponents from './components';
 import loadDevices from './devices';
 
-const loadCss = editor => {
+const loadCss = (editor) => {
   editor.Config.canvasCss += `
     /* Layout */
 
@@ -46,25 +46,23 @@ const loadCss = editor => {
       min-height: 1.5rem !important;
       display: block !important;
     }
-  `
+  `;
 };
 
 export default grapesjs.plugins.add('grapesjs-blocks-bootstrap5', (editor, opts = {}) => {
-
   window.editor = editor;
 
   const opts_blocks = opts.blocks || {};
   const opts_labels = opts.labels || {};
   const opts_categories = opts.blockCategories || {};
-  delete opts['blocks'];
-  delete opts['labels'];
-  delete opts['blockCategories'];
+  delete opts.blocks;
+  delete opts.labels;
+  delete opts.blockCategories;
 
   const default_blocks = {
     default: true,
-    text: true,
-    link: true,
     image: true,
+    list: true,
     // LAYOUT
     container: true,
     row: true,
@@ -86,8 +84,8 @@ export default grapesjs.plugins.add('grapesjs-blocks-bootstrap5', (editor, opts 
     // TYPOGRAPHY
     header: true,
     paragraph: true,
-    // BASIC
-    list: true,
+    text: true,
+    link: true,
     // FORMS
     form: true,
     input: true,
@@ -130,8 +128,6 @@ export default grapesjs.plugins.add('grapesjs-blocks-bootstrap5', (editor, opts 
 
     // TYPOGRAPHY
     text: 'Text',
-
-    // BASIC
     header: 'Header',
     paragraph: 'Paragraph',
     link: 'Link',
@@ -176,26 +172,29 @@ export default grapesjs.plugins.add('grapesjs-blocks-bootstrap5', (editor, opts 
   };
 
   const default_categories = {
-    'layout': true,
-    'media': true,
-    'components': true,
-    'typography': true,
-    'basic': true,
-    'forms': true,
+    media: true,
+    typography: true,
+    components: false,
+    layout: true,
+    basic: false,
+    forms: false,
   };
 
-  let options = { ...{
-    blocks: Object.assign(default_blocks, opts_blocks),
-    labels: Object.assign(default_labels, opts_labels),
-    blockCategories: Object.assign(default_categories, opts_categories),
-    optionsStringSeparator: '::',
-    gridDevices: true,
-    gridDevicesPanel: false,
-    classNavigation: 'nav',
-    classTabPanes: 'tab-content',
-    classTabPane: 'tab-pane',
-    classTab: 'nav-item',
-  },  ...opts };
+  const options = {
+    ...{
+      blocks: Object.assign(default_blocks, opts_blocks),
+      labels: Object.assign(default_labels, opts_labels),
+      blockCategories: Object.assign(default_categories, opts_categories),
+      optionsStringSeparator: '::',
+      gridDevices: true,
+      gridDevicesPanel: false,
+      classNavigation: 'nav',
+      classTabPanes: 'tab-content',
+      classTabPane: 'tab-pane',
+      classTab: 'nav-item',
+    },
+    ...opts,
+  };
 
   // Add components
   loadCommands(editor, options);

@@ -1,4 +1,4 @@
 export default {
-    'lg': 'Large',
-    'sm': 'Small'
+  lg: 'Large',
+  sm: 'Small',
 };

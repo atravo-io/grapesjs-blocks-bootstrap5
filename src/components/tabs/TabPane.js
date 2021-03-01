@@ -23,16 +23,16 @@ export default (dc, config = {}) => {
           {
             type: 'class_select',
             options: [
-              {value: 'fade', name: 'Fade'},
-              {value: '', name: 'None'},
+              { value: 'fade', name: 'Fade' },
+              { value: '', name: 'None' },
             ],
             label: 'Animation',
           },
           {
             type: 'class_select',
             options: [
-              {value: '', name: 'Inactive'},
-              {value: 'active', name: 'Active'},
+              { value: '', name: 'Inactive' },
+              { value: 'active', name: 'Active' },
             ],
             label: 'Is Active',
           },
@@ -41,7 +41,7 @@ export default (dc, config = {}) => {
 
       init() {
         this.get('classes').pluck('name').indexOf(classId) < 0 && this.addClass(classId);
-      }
+      },
     }, {
       isComponent(el) {
         if (elHasClass(el, classId)) return { type };
@@ -50,4 +50,4 @@ export default (dc, config = {}) => {
 
     view: defaultView,
   });
-}
+};

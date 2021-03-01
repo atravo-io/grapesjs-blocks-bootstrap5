@@ -1,4 +1,4 @@
-import compressIcon from "raw-loader!../icons/compress-solid.svg";
+import compressIcon from 'raw-loader!../icons/compress-solid.svg';
 
 export const CollapseBlock = (bm, label) => {
   bm.add('collapse', {
@@ -8,8 +8,8 @@ export const CollapseBlock = (bm, label) => {
         `,
     category: 'Components',
     content: {
-      type: 'collapse'
-    }
+      type: 'collapse',
+    },
   });
 };
 
@@ -21,7 +21,8 @@ export default (editor) => {
 
   comps.addType('collapse', {
     model: defaultModel.extend({
-      defaults: Object.assign({}, defaultModel.prototype.defaults, {
+      defaults: {
+        ...defaultModel.prototype.defaults,
         'custom-name': 'Dropdown',
         classes: ['collapse'],
         droppable: true,
@@ -29,14 +30,14 @@ export default (editor) => {
           {
             type: 'class_select',
             options: [
-              {value: '', name: 'Closed'},
-              {value: 'show', name: 'Open'}
+              { value: '', name: 'Closed' },
+              { value: 'show', name: 'Open' },
             ],
-            label: 'Initial state'
-          }
-        ].concat(defaultModel.prototype.defaults.traits)
-      }),
-      /*init2() {
+            label: 'Initial state',
+          },
+        ].concat(defaultModel.prototype.defaults.traits),
+      },
+      /* init2() {
         window.asdf = this;
         const toggle = {
           type: 'button',
@@ -106,19 +107,18 @@ export default (editor) => {
           }
           menu.set('attributes', menu_attrs, {ignore: true});
         }
-      }*/
+      } */
     }, {
       isComponent(el) {
-        if(el && el.classList && el.classList.contains('dropdown')) {
-          return {type: 'dropdown'};
+        if (el && el.classList && el.classList.contains('dropdown')) {
+          return { type: 'dropdown' };
         }
-      }
+      },
     }),
     view: defaultView.extend({
-      /*init() {
+      /* init() {
         this.model.setupToggle
-      }*/
-    })
+      } */
+    }),
   });
-
-}
+};

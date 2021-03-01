@@ -23,4 +23,4 @@ export default {
   tabPanesId: `data-${tabPanesName}`,
   tabId: `data-${tabName}`,
   tabPaneId: `data-${tabPaneName}`,
-}
+};
