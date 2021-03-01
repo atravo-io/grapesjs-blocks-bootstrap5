@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-blocks-bootstrap5",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "GrapesJS Bootstrap v5 Blocks Plugin",
   "main": "dist/grapesjs-blocks-bootstrap5.min.js",
   "scripts": {
@@ -20,14 +20,16 @@
     "plugin",
     "bootstrap"
   ],
-  "author": "z1lk",
+  "author": "atravo",
   "license": "BSD-3-Clause",
   "peerDependencies": {
     "grapesjs": "0.x"
   },
   "devDependencies": {
     "@webpack-cli/init": "^1.0.3",
-    "eslint": "^7.8.1",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^4.4.1",
     "raw-loader": "^4.0.1",
     "terser-webpack-plugin": "^5.0.3",
